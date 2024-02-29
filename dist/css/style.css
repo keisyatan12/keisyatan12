@@ -17,6 +17,7 @@ header{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .navigation{
@@ -38,7 +39,7 @@ header{
 header .greetings{
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 50%;
   transform: translate(50%, -50%);
   -webkit-transform: translate(50%, -50%);
   -moz-transform: translate(50%, -50%);
@@ -57,14 +58,81 @@ header .greetings h1{
   font-size: 34px;
 }
 
+.about .box-about{
+  flex-direction: column-reverse;
+}
+
+.about .box-about .box:nth-child(1){
+  text-align: center;
+  margin-top: 30px;
+}
+
+.about .box-about .box:nth-child(2) img{
+  width: 400px;
+}
+  
+
 @media screen and (max-width: 768px){
   header .greetings h1{
     font-size: 28px;
   }
 }
 
+@media screen and (max-width: 575px){
+  .about .box-about .box:nth-child(1) h1{
+    font-size: 34px;
+  }
+
+  .about .box-about .box:nth-chid(1) p{
+    font-size: 12px;
+
+  }
+  .about .box-about .box:nth-child(2) img{
+    width: 300px;
+  }
+}
 @media screen and (max-width: 475px){
   header .greetings h1{
   font-size: 20px;
   }
 }
+
+.about{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.about .box-about{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .box-about .box:nth-child(1){
+  padding-right: 30px;
+}
+
+.about .box-about .box:nth-child(2) img{
+  border-radius: 10px;
+  webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 600px;
+}
+
+@media screen and (max-width: 1200px){
+  .about .box-about .box:nth-child(2) img{
+    width: 500px;
+  }
+
+
+.about .box-about .box:nth-child(1) h1{
+  font-size: 42px;
+}
+
+.about .box-about .box:nth-child(1) p{
+  line-height: 2;
