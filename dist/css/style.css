@@ -65,6 +65,7 @@ header .greetings h1{
 .about .box-about .box:nth-child(1){
   text-align: center;
   margin-top: 30px;
+  padding-right: 0;
 }
 
 .about .box-about .box:nth-child(2) img{
@@ -84,7 +85,7 @@ header .greetings h1{
   }
 
   .about .box-about .box:nth-chid(1) p{
-    font-size: 12px;
+    font-size: 14px;
 
   }
   .about .box-about .box:nth-child(2) img{
@@ -95,6 +96,18 @@ header .greetings h1{
   header .greetings h1{
   font-size: 20px;
   }
+
+  .about .box-about .box:nth-child(1) h1{
+    font-size: 28px;
+  }
+
+  .about .box-about .box:nth-chid(1) p{
+    font-size: 12px;
+
+  }
+  .about .box-about .box:nth-child(2) img{
+    width: 250px;
+  }
 }
 
 .about{
@@ -102,6 +115,7 @@ header .greetings h1{
   height: 100vh;
   display: flex;
   align-items: center;
+  background-color: #FAF9F9;
 }
 
 .about .box-about{
@@ -132,7 +146,24 @@ header .greetings h1{
 
 .about .box-about .box:nth-child(1) h1{
   font-size: 42px;
+  margin-bottom: 20px;
 }
 
 .about .box-about .box:nth-child(1) p{
   line-height: 2;
+}
+  
+@media screen and (max-width: 375px){
+  .about .box-about .box:nth-child(1) h1{
+    font-size: 24px;
+  }
+
+  .about .box-about .box:nth-chid(1) p{
+    font-size: 10px;
+
+  }
+  .about .box-about .box:nth-child(2) img{
+    width: 200px;
+  }
+}
+  
