@@ -34,3 +34,36 @@ header{
   font-size: 38px;
   color: white;
 }
+
+header .greetings{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+header .greetings h1{
+  color: white;
+  font-size: 45px;
+  text-align: center;
+}
+
+header .greetings h1{
+  font-size: 34px;
+}
+
+@media screen and (max-width: 768px){
+  header .greetings h1{
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 475px){
+  header .greetings h1{
+  font-size: 20px;
+  }
+}
