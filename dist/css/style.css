@@ -142,7 +142,7 @@ header .greetings h1{
   .about .box-about .box:nth-child(2) img{
     width: 500px;
   }
-
+}
 
 .about .box-about .box:nth-child(1) h1{
   font-size: 42px;
