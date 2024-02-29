@@ -44,6 +44,7 @@ header .greetings{
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 header .greetings h1{
@@ -54,16 +55,19 @@ header .greetings h1{
 
 header .greetings h1{
   font-size: 34px;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px){
   header .greetings h1{
     font-size: 28px;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 475px){
   header .greetings h1{
   font-size: 20px;
+  text-align: center;
   }
 }
