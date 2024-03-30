@@ -5,65 +5,869 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home | Merdeka Belajar</title>
+	<link href="../image/KampusMerdekaLogo.png" rel="icon" type="image/png">
 	<link href="style/output.css" rel="stylesheet">
+	
 </head>
 
 <body>
-	<!-- First Section -->
-	<section id="home" class="pt-36">
-		<div class="container relative">
-			<div class="w-full lg:w-screen">
-				<img src="../../keisyatan12/image/headline.webp" alt="headline">
-				<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left text-white w-full px-6 ml-36">
-					<h1 class="text-base font-bold text-primary text-7xl font-sans mb-3">Ambil Kendali <br/>Masa Depanmu</h1>
-					<h2 class="font-normal text-primary text-lg mb-5">Kampus Merdeka adalah cara terbaik berkuliah.<br/> 
-						Dapatkan kemerdekaan untuk membentuk masa depan yang<br/>
-						sesuai dengan aspirasi kariermu.</h2>
-					<a href="#" class="text-base font-semibold text-white bg-button py-3 px-8 rounded-lg mr-3 hover:shadow-lg hover:bg-blue-800 transition duration-300 ease-in-out">Telusuri Program</a>
-					<a href="#" class="text-base font-semibold text-black bg-button2 py-3 px-8 rounded-lg hover:shadow-lg transition duration-300 ease-in-out">Cek Persyaratan Umum</a>
-				</div>
+	<!-- Navbar -->
+	<nav class="py-4 bg-[#000000]">
+		<div class="max-w-6xl px-3 md:px-6 mx-auto flex items-center justify-between">
+			<div class="flex gap-3 items-center">
+				<img 
+					src="../image/logokemdikbud.webp"
+					alt="logo kampus merdeka"
+					class="w-10"
+				/>
+				<img 
+					src="../image/logokampusmerdeka.webp"
+					alt="logo kampus merdeka"
+					class="w-20"
+				/>
 			</div>
-		</div>
-	
 
-	</section>
-	<!-- End of First Section -->
+			<ul class="hidden md:flex items-center gap-12">
+				<li>
+					<a href="#" class="text-white font-semibold">Beranda</a>
+				</li>
+				<li>
+					<a href="#" class="text-white font-semibold">Program</a>
+				</li>
+				<li>
+					<a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us" class="text-white font-semibold">Butuh Bantuan?</a>
+				</li>	
+				<button class="flex items-center gap-4 bg-white rounded-full p-4">
+					<img 
+						src="../image/user.svg"
+						alt="user"
+						class="w-[14px]"
+					/>
+					<span class="text-black text-sm font-semibold">Masuk ke Akun</span>
+				</button>
+			</ul>
+			<button id="menuBtn" class="block lg:hidden focus:outline-none">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+			   </svg>
+		   </button>
 
-    <!-- About Kampus Merdeka -->
-    <section id="about" class="pt-36 pb-32">
-       <div class="container">
-         <div class="flex flex-wrap">
-			<div class="w-full px-4 mb-10 ml-36 grid grid-cols-2 gap-2">
-				<div>
-               <h2 class="font-bold text-5xl mb-3 max-w-xl">Kampus Merdeka</h2>
-			   <h3 class="font-semibold text-2xl mb-3 max-w-xl">Program persiapan karier yang komprehensif untuk mempersiapkan generasi terbaik Indonesia</h3>
-			   <p class="font-normal max-w-xl">Kampus Merdeka adalah bagian dari kebijakan Merdeka Belajar oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek) yang memberikan seluruh mahasiswa <span class="text-amber-500 font-semibold">kesempatan untuk mengasah kemampuan sesuai bakat dan minat</span> dengan <span class="text-amber-500 font-semibold">terjun langsung ke dunia kerja</span> sebagai <span class="text-amber-500 font-semibold">langkah persiapan karier.</span></p>
-			</div>
-				<div>
-			   <img src="../image/perpus.webp" alt="perpus" class="rounded-xl mb-10 ml-8">
-			</div>
-			</div>
-			<div class="w-full px-4 mb-10 ml-44 text-center">
-			<h2 class="font-bold text-5xl mb-14">Apa saja manfaat dari Kampus Merdeka?</h2>
-			</div>
-           <div class="flex items-center justify-center">
-			<img src="../image/1.webp" alt="1"class="ml-48 mr-3 w-25 h-25 rounded-lg flex justify-center items-center bg-orange-200 p-2">
-			<img src="../image/2.webp" alt="2"class="ml-48 mr-3 w-25 h-25 rounded-lg flex justify-center items-center bg-orange-200 p-2">
-			<img src="../image/3.webp" alt="3"class="ml-48 mr-3 w-25 h-25 rounded-lg flex justify-center items-center bg-orange-200 p-2">
-			<img src="../image/4.webp" alt="4"class="ml-48 mr-3 w-25 h-25 rounded-lg flex justify-center items-center bg-orange-200 p-2">
-			
+		   <div id="menu" class="bg-white h-96 p-8 absolute top-0 left-0 right-0 w-full hidden lg:hidden">
+			   <button id="closeBtn" class="block lg:hidden focus:outline-none absolute top-4 right-4">
+				   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				   </svg>
+			   </button>
+			   <ul class="flex relative pt-10 flex-col gap-6 w-full">
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-sm text-gray-500">Program kampus merdeka</a>
+				   </li>
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-[15px] font-semibold text-black">Kampus mengajar</a>
+						<svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					   </svg>
+				   </li>
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-[15px] font-semibold text-black">Magang MSIB</a>
+						<svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					   </svg>
+				   </li>
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-[15px] font-semibold text-black">Studi Independen Bersertifikat</a>
+						<svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					   </svg>
+				   </li>
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-[15px] font-semibold text-black">Pertukaran Mahasiswa Merdeka</a>
+						<svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					   </svg>
+				   </li>
+				   <li class="flex items-center justify-between">
+					   <a href="#" class="text-[15px] font-semibold text-black">Program dan Kegiatan lainnya</a>
+						<svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					   </svg>
+				   </li>
+			   </ul>
+		   </div>	
+	   </div>
+   </nav>
+
+   <!-- sub navbar -->
+   <div class="relative hidden md:block">
+	   <ul class="max-w-6xl md:px-6 mx-auto flex items-center gap-8">
+		   <li class="py-3 hover:bg-gray-100 block active:text-blue-600 hover:text-blue-600">
+			   <button id="kampus-mengajar-button" data-collapse-toggle="kampus-mengajar" class="flex items-center justify-between w-full py-2 px-3 rounded text-base font-semibold md:w-auto md:hover:bg-transparent md:border-0 ">
+				   <p class="text-left">Kampus Mengajar</p> <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+				   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+					 </svg>
+			   </button>
+		   </li>
+		   <li class="py-3 hover:bg-gray-100 block hover:text-blue-600">
+			   <button id="magang-msib-button" data-collapse-toggle="magang-msib" class="flex items-center justify-between w-full py-2 px-3 rounded text-base font-semibold md:w-auto md:hover:bg-transparent md:border-0 ">
+				   <p class="text-left">Magang MSIB</p> <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+				   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+					 </svg>
+			   </button>
+		   </li>
+		   <li class="py-3 hover:bg-gray-100 block hover:text-blue-600">
+			   <button id="studi-independen-button" data-collapse-toggle="studi-independen" class="flex items-center justify-between w-full py-2 px-3 rounded text-base font-semibold md:w-auto md:hover:bg-transparent md:border-0 ">
+				   <p class="text-left">Studi Independen Bersertifikat</p> <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+				   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+					 </svg>
+			   </button>
+		   </li>
+		   <li class="py-3 hover:bg-gray-100 block hover:text-blue-600">
+			   <button id="pertukaran-mahasiswa-button" data-collapse-toggle="pertukaran-mahasiswa" class="flex items-center justify-between w-full py-2 px-3 rounded text-base font-semibold md:w-auto md:hover:bg-transparent md:border-0 ">
+				   <p class="text-left">Pertukaran Mahasiswa Merdeka</p> <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+				   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+					 </svg>
+			   </button>
+		   </li>
+		   <li class="py-3 hover:bg-gray-100 block hover:text-blue-600">
+			   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program'" class="flex items-center justify-between w-full py-2 px-3 rounded text-base font-semibold md:w-auto md:hover:bg-transparent md:border-0 ">
+				   <p class="text-left">Program dan Kegiatan Lainnya</p>
+			   </button>
+		   </li>
+	   </ul>
+	   
+	   <div id="kampus-mengajar" class="md:px-6 hidden absolute w-full bg-white dark:bg-white">
+		   <div class="grid max-w-6xl pt-6 pb-12 mx-auto text-black dark:text-black">
+			   <div class="flex items-start gap-20 justify-between">
+				   <div class="flex flex-col gap-2 w-[55%]">
+					   <img 
+						   src="../image/kampus-mengajar.webp"
+						   alt="kampus mengajar"
+						   class="w-20"
+					   />
+					   <h3 class="font-bold text-3xl">Kampus Mengajar</h3>
+					   <p>
+						   Bantu peningkatan kualitas pendidikan dasar dengan terlibat langsung pada proses pengajaran di sekolah-sekolah yang berlokasi di seluruh daerah di Indonesia.
+					   </p>
+					   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/mengajar'" class="mt-2 py-2 px-4 w-48 rounded-xl border border-black text-base font-semibold">
+						   Selengkapnya
+					   </button>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pendaftaran</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417536152345-Mendaftar-Program-Kampus-Mengajar">Cara Mendaftar</a>
+					   <a class="text-blue-600 underline" href="https://kampusmerdeka.kemdikbud.go.id/program/mengajar/syarat-ketentuan">Syarat dan Ketentuan</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Seleksi dan Penerimaan</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417739560857-Proses-Seleksi-Mahasiswa-Kampus-Mengajar">Proses Seleksi</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417750939161-Cara-Mahasiswa-Mengerjakan-Tes-Seleksi-Kampus-Mengajar">Pengerjaan Tes</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pelaksanaan Program</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417528225817-Materi-Pembekalan-Mahasiswa-Program-Kampus-Mengajar-Angkatan-7">Pembekalan</a>
+					   <a class="text-blue-600 underline" href="https://wartekhelp.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fpusatinformasi.kampusmerdeka.kemdikbud.go.id%2Fhc%2Fen-us%2Farticles%2F11692871104281&theme=hc&locale=en-us&brand_id=4416820781337&auth_origin=4416820781337%2Ctrue%2Ctrue">Pengisian Log Mingguan</a>
+					   <a class="text-blue-600 underline" href="https://wartekhelp.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fpusatinformasi.kampusmerdeka.kemdikbud.go.id%2Fhc%2Fen-us%2Farticles%2F4417545855001-Panduan-Membuat-Laporan-Kampus-Mengajar&theme=hc&locale=en-us&brand_id=4416820781337&auth_origin=4416820781337%2Ctrue%2Ctrue">Laporan Akhir</a>
+				   </div>
+			   </div>
 		   </div>
-		   <p class="text-center justify-center ml-40 mr-0 mt-3">Kegiatan dapat dikonversi <br/>menjadi sks</p>
-		   <p class="text-center justify-center ml-28 mr-0 mt-3">Perluas jaringan hingga ke luar <br/>program studi dan universitas</p>
-		   <p class="text-center justify-center ml-24 mr-0 mt-3">Eksplorasi pengetahuan dan <br/>kemampuan di lapangan selama <br/>lebih dari satu semester</p>
-		   <p class="text-center justify-center ml-16 mr-0 mt-3">Menimba ilmu secara langsung <br/>dari mitra berkualitas dan <br/>terkemuka</p>
-		</div>
-		 </div>
-	   
-	   
-	   
-	</section>
-	<!-- End of About Kampus Merdeka -->
+	   </div>
+
+	   <div id="magang-msib" class="md:px-6 absolute hidden w-full bg-white dark:bg-white">
+		   <div class="grid max-w-6xl pt-6 pb-12 mx-auto text-black dark:text-black">
+			   <div class="flex items-start gap-20 justify-between">
+				   <div class="flex flex-col gap-2 w-[55%]">
+					   <img 
+						   src="../image/msib.webp"
+						   alt="msib"
+						   class="w-36"
+					   />
+					   <h3 class="font-bold text-3xl">Magang MSIB</h3>
+					   <p>
+						   Dapatkan pengalaman dunia kerja secara langsung sebagai persiapan kariermu.
+					   </p>
+					   <div class="flex items-center gap-4">
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/magang'" class="mt-2 py-2 px-4 w-48 rounded-xl border bg-black text-white text-base font-semibold">
+							   Cari Lowongan
+						   </button>
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/magang/detail'" class="mt-2 py-2 px-4 w-48 rounded-xl border border-black text-base font-semibold">
+							   Selengkapnya
+						   </button>
+					   </div>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pendaftaran</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417215860633-Mencari-Kegiatan-dan-Mendaftar-Program-MSIB">Cara Mendaftar</a>
+					   <a class="text-blue-600 underline" href="https://kampusmerdeka.kemdikbud.go.id/program/magang/syarat-ketentuan">Syarat dan Ketentuan</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Seleksi dan Penerimaan</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417249598745-Cara-Mengambil-Tawaran-Magang-atau-Studi-Independen">Cara Menerima Tawaran</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417206683929-Melihat-Status-Pendaftaran-Mahasiswa-MSIB">Cara Melihat Status Pendaftaran</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pelaksanaan Program</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417257564569-Cara-Mengisi-Logbook-Laporan-Kegiatan-Aktif-Mahasiswa-MSIB">Pengisian Logbook dan Laporan Aktif</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417245343769-Laporan-Akhir-Mahasiswa-MSIB">Pengisian Laporan Akhir</a>
+				   </div>
+			   </div>
+		   </div>
+	   </div>
+
+	   <div id="studi-independen" class="md:px-6 absolute hidden w-full bg-white dark:bg-white">
+		   <div class="grid max-w-6xl pt-6 pb-12 mx-auto text-black dark:text-black">
+			   <div class="flex items-start gap-20 justify-between">
+				   <div class="flex flex-col gap-2 w-[55%]">
+					   <img 
+						   src="../image/msib.webp"
+						   alt="msib"
+						   class="w-36"
+					   />
+					   <h3 class="font-bold text-3xl">Studi Independen Bersertifikat</h3>
+					   <p>
+						   Jalankan proyek penelitian dengan studi kasus nyata dari para pelaku industri ternama.	
+					   </p>
+					   <div class="flex items-center gap-4">
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/studi-independen'" class="mt-2 py-2 px-4 w-72 rounded-xl border bg-black text-white text-base font-semibold">
+							   Cari Kelas Studi Independen
+						   </button>
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/studi-independen/detail'" class="mt-2 py-2 px-4 w-48 rounded-xl border border-black text-base font-semibold">
+							   Selengkapnya
+						   </button>
+					   </div>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pendaftaran</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417215860633-Mencari-Kegiatan-dan-Mendaftar-Program-MSIB">Cara Mendaftar</a>
+					   <a class="text-blue-600 underline" href="https://kampusmerdeka.kemdikbud.go.id/program/magang/syarat-ketentuan">Syarat dan Ketentuan</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Seleksi dan Penerimaan</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417249598745-Cara-Mengambil-Tawaran-Magang-atau-Studi-Independen">Cara Menerima Tawaran</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417206683929-Melihat-Status-Pendaftaran-Mahasiswa-MSIB">Cara Melihat Status Pendaftaran</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pelaksanaan Program</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417257564569-Cara-Mengisi-Logbook-Laporan-Kegiatan-Aktif-Mahasiswa-MSIB">Pengisian Logbook dan Laporan Aktif</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417245343769-Laporan-Akhir-Mahasiswa-MSIB">Pengisian Laporan Akhir</a>
+				   </div>
+			   </div>
+		   </div>
+	   </div>
+
+	   <div id="pertukaran-mahasiswa" class="md:px-6 absolute hidden w-full bg-white dark:bg-white">
+		   <div class="grid max-w-6xl pt-6 pb-12 mx-auto text-black dark:text-black">
+			   <div class="flex items-start gap-20 justify-between">
+				   <div class="flex flex-col gap-2 w-[55%]">
+					   <img 
+						   src="../image/pertukaran-mahasiswa.webp"
+						   alt="msib"
+						   class="w-36"
+					   />
+					   <h3 class="font-bold text-3xl">Pertukaran Mahasiswa Merdeka</h3>
+					   <p>
+						   Program pertukaran dengan universitas lain dari seluruh Indonesia yang bertujuan untuk memperkaya khazanah budayamu.
+					   </p>
+					   <button onclick="window.location.href='https://pmm.kampusmerdeka.kemdikbud.go.id/pages/info/program/pmm_4/'" class="mt-2 py-2 px-4 w-48 rounded-xl border border-black text-base font-semibold">
+						   Selengkapnya
+					   </button>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pendaftaran</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/9399245245081-Panduan-Pendaftaran-Mahasiswa-ke-Program-Pertukaran-Mahasiswa-Merdeka-PMM-3">Cara Mendaftar</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/9200035628953-Persyaratan-dan-Dokumen-Pendaftaran-Mahasiswa-Pertukaran-Mahasiswa-Merdeka-PMM-4">Syarat dan Ketentuan</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Seleksi dan Penerimaan</h4>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/10571854171033-Skema-Pelaksanaan-Pertukaran-Mahasiswa-Merdeka-untuk-Mahasiswa">Skema Umum Program</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/9401855076121-Proses-Seleksi-Mahasiswa-Pertukaran-Mahasiswa-Merdeka">Proses Seleksi</a>
+				   </div>
+				   <div class="flex flex-col gap-3 w-[15%]">
+					   <h4 class="font-semibold">Pelaksanaan Program</h4>
+					   <a class="text-blue-600 underline" href="https://wartekhelp.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fpusatinformasi.kampusmerdeka.kemdikbud.go.id%2Fhc%2Fen-us%2Farticles%2F10347026973081-Panduan-Membuat-Laporan-Bulanan-Pertukaran-Mahasiswa-Merdeka-untuk-Mahasiswa&theme=hc&locale=en-us&brand_id=4416820781337&auth_origin=4416820781337%2Ctrue%2Ctrue">Pengisian Laporan Bulanan</a>
+					   <a class="text-blue-600 underline" href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/10348211252889-Peraturan-Program-Pertukaran-Mahasiswa-Merdeka-untuk-Mahasiswa">Peraturan Program PMM</a>
+				   </div>
+			   </div>
+		   </div>
+	   </div>
+   </div>
+
+   <!-- banner -->
+   <header class="banner-background">
+	   <div class="max-w-6xl px-3 md:px-6 mx-auto h-full flex items-center">
+		   <div class="w-full md:w-[60%]">
+			   <h1 class="text-white font-bold text-3xl md:text-7xl">Ambil Kendali <br> Masa Depanmu</h1>
+			   <p class="text-white pt-2 pb-4">
+				   Kampus Merdeka adalah cara terbaik berkuliah. 
+				   Dapatkan kemerdekaan untuk membentuk masa depan yang 
+				   sesuai dengan aspirasi kariermu.
+			   </p>
+			   <div class="flex items-start md:items-center md:flex-row flex-col gap-4">
+				   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program'" class="bg-blue-600 w-full py-3 px-8 text-white font-semibold rounded-xl">
+					   Telusuri Program
+				   </button>
+				   <button onclick="window.location.href='https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us'" class="bg-white py-3 px-8 w-full text-black font-semibold rounded-xl">
+					   Cek Persyaratan Umum
+				   </button>
+			   </div>
+		   </div>
+	   </div>
+   </header>
+
+   <!--carousel   -->
+   <section class="py-12 md:py-24 bg-gray-200/80 mx-auto">
+	   <h2 class="text-2xl md:text-5xl font-bold px-3 md:px-6 max-w-6xl mx-auto">Program dan Kegiatan Unggulan</h2>
+	   <div class="flex md:px-6 items-center justify-center w-full h-full pt-8 px-4">
+		   <div class="w-full relative flex items-center justify-center">
+			   <button aria-label="slide backward" class="absolute z-30 left-1 bg-gray-200 border border-gray-400 p-3 rounded-xl focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+				   <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					   <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				   </svg>
+			   </button>
+			   <div class="max-w-6xl h-full mx-auto overflow-x-hidden overflow-y-hidden">
+				   <div id="slider" class="h-full flex gap-4 items-center justify-start transition ease-out duration-700">
+					   <div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/kampus-mengajar.webp" alt="kampus mengajar" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Bantu tingkatkan kualitas 
+								   pengajaran pendidikan 
+								   dasar melalui <strong>Kampus Mengajar</strong>
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/mengajar'" class="w-64 text-black font-semibold border border-black text-center rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+					   <div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/msib.webp" alt="kampus mengajar" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Rasakan pengalaman dunia kerja dengan terjun langsung melalui <strong>Magang MSIB</strong>
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/magang/detail'" class="text-black w-64 font-semibold border text-center border-black rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+						<div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/msib.webp" alt="kampus mengajar" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Riset kolaboratif bersama perusahaan ternama melalui <strong>Studi Independen</strong>
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/studi-independen/detail'" class="text-black w-64 font-semibold text-center border border-black rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+					   <div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						<div>
+							<img src="../image/mandiri.webp" alt="kampus mengajar" class="w-40" />
+							<p class="mt-4 text-lg">
+								Temukan pengalaman dunia kerja yang dikelola secara langsung oleh perusahaan melalui <strong>Magang Mandiri</strong>
+							</p>
+						</div>
+						<button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/magang-mandiri/detail'" class="text-black w-64 font-semibold text-center border border-black rounded-xl py-2 px-8">
+							Selengkapnya
+						</button>
+					</div>
+						<div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/pertukaran-mahasiswa.webp" alt="kampus mengajar" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Bertukar pengalaman budaya dengan universitas lain melalui <strong>Pertukaran Mahasiswa</strong> dalam negeri
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://pmm.kampusmerdeka.kemdikbud.go.id/pages/info/program/pmm_4/'" class="text-black w-64 text-center font-semibold border border-black rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+						<div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/iisma.webp" alt="iism" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Perluas wawasan dan koneksi melalui <strong>Pertukaran Mahasiswa secara Internasional</strong>
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://iisma.kemdikbud.go.id/info/'" class="text-black w-64 font-semibold border border-black text-center rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+					   <div class="flex flex-col justify-between w-80 h-96 rounded-xl p-6 gap-8 bg-white">
+						   <div>
+							   <img src="../image/wmk.webp" alt="iism" class="w-40" />
+							   <p class="mt-4 text-lg">
+								   Ikuti program wirausaha dari perguruan tinggi lain melalui <strong>Wirausaha Merdeka</strong>
+							   </p>
+						   </div>
+						   <button onclick="window.location.href='https://wirausahamerdeka.id/'" class="text-black w-64 font-semibold border border-black text-center rounded-xl py-2 px-8">
+							   Selengkapnya
+						   </button>
+					   </div>
+				   </div>
+			   </div>
+			   
+			   <button aria-label="slide forward" class="absolute z-30 border right-1 border-gray-400 p-3 rounded-xl bg-gray-200 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+				   <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					   <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				   </svg>
+			   </button>
+		   </div>
+	   </div>
+
+	   <div class="max-w-6xl mt-16 flex justify-center mx-auto">
+		   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program'" class="text-white text-center font-semibold bg-[#1a1a1a] rounded-xl py-2 px-8">
+			   Lihat program lainnya
+		   </button>
+	   </div>
+   </section>
+
+
+   <!-- About Kampus Merdeka -->
+   <section id="about" class="bg-[#1a1a1a] py-12 md:py-24">
+		  <div class="max-w-6xl md:px-6 mx-auto px-3">
+			<div class="w-full mx-auto">
+			   <div class="w-full mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+				   <div class="text-white pt-8 order-2 md:order-1">
+						  <h2 class="font-bold text-2xl md:text-5xl mb-3 max-w-xl">Kampus Merdeka</h2>
+						  <h3 class="font-semibold text-lg md:text-2xl mb-3 max-w-xl">
+						   Program persiapan karier yang komprehensif untuk mempersiapkan generasi terbaik Indonesia
+					   </h3>
+						  <p class="md:text-base text-sm font-normal max-w-xl">
+						   Kampus Merdeka adalah bagian dari kebijakan Merdeka Belajar oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek) yang memberikan seluruh mahasiswa <span class="text-yellow-400 font-semibold">kesempatan untuk mengasah kemampuan sesuai bakat dan minat</span> dengan <span class="text-yellow-400 font-semibold">terjun langsung ke dunia kerja</span> sebagai <span class="text-yellow-400 font-semibold">langkah persiapan karier.</span>
+					   </p>
+				   </div>
+				  <img src="../image/perpus.webp" alt="perpus" class="md:order-2 order-1 block rounded-xl">
+			   </div>
+		   </div>
+	   </div>
+
+	   <div class="max-w-6xl md:px-6 mx-auto pt-10 px-4 mb-10 text-center">
+		   <h2 class="font-bold text-2xl md:text-5xl mb-14 text-white">Apa saja manfaat dari Kampus Merdeka?</h2>
+
+			  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+			   <div class="flex flex-col gap-3 items-center">
+				   <div class="rounded-full w-20 h-20 bg-gradient-to-b from-orange-300  to-orange-200 flex items-center justify-center">
+					   <img src="../image/1.webp" alt="1" class="w-12">
+				   </div>
+				   <p class="text-white text-sm md:text-base">Kegiatan dapat dikonversi menjadi sks</p>
+			   </div>
+			   <div class="flex flex-col gap-3 items-center">
+				   <div class="rounded-full w-20 h-20 bg-gradient-to-b from-orange-300  to-orange-200 flex items-center justify-center">
+					   <img src="../image/2.webp" alt="1" class="w-12">
+				   </div>
+				   <p class="text-white text-sm md:text-base">Perluas jaringan hingga ke luar program studi dan universitas</p>
+			   </div>
+			   <div class="flex flex-col gap-3 items-center">
+				   <div class="rounded-full w-20 h-20 bg-gradient-to-b from-orange-300  to-orange-200 flex items-center justify-center">
+					   <img src="../image/3.webp" alt="1" class="w-12">
+				   </div>
+				   <p class="text-white text-sm md:text-base">Eksplorasi pengetahuan dan kemampuan di lapangan selama lebih dari satu semester</p>
+			   </div>
+			   <div class="flex flex-col gap-3 items-center">
+				   <div class="rounded-full w-20 h-20 bg-gradient-to-b from-orange-300  to-orange-200 flex items-center justify-center">
+					   <img src="../image/4.webp" alt="1" class="w-12">
+				   </div>
+				   <p class="text-white text-sm md:text-base">Menimba ilmu secara langsung dari mitra berkualitas dan terkemuka</p>
+			   </div>
+		   </div>
+	   </div>
+
+	   <div class="max-w-6xl md:px-6 mx-auto mb-10 flex flex-col gap-4 md:gap-12 px-3">
+		   <div class="flex items-start md:items-center gap-4 md:gap-8 md:flex-row flex-col">
+			   <h2 class="text-6xl md:text-[110px] font-bold text-yellow-400">
+				   725.000+
+			   </h2>
+			   <h3 class="font-bold text-xl md:text-3xl text-white">
+				   mahasiswa sudah terdaftar dan memiliki akun Kampus Merdeka
+			   </h3>
+		   </div>
+		   <div class="flex items-start md:items-center gap-4 md:gap-8 md:flex-row flex-col">
+			   <h2 class="text-6xl md:text-[110px] font-bold text-yellow-400">
+				   14.000+
+			   </h2>
+			   <h3 class="font-bold text-xl md:text-3xl text-white">
+				   sekolah dari seluruh Indonesia telah menerima manfaat bantuan pengajaran	
+			   </h3>
+		   </div>
+		   <div class="flex items-start md:items-center gap-4 md:gap-8 md:flex-row flex-col">
+			   <h2 class="text-6xl md:text-[110px] font-bold text-yellow-400">
+				   3.000+
+			   </h2>
+			   <h3 class="font-bold text-xl md:text-3xl text-white">
+				   organisasi dan perusahaan telah mendaftarkan diri sebagai mitra
+			   </h3>
+		   </div>
+		   <div class="flex items-start md:items-center gap-4 md:gap-8 md:flex-row flex-col">
+			   <h2 class="text-6xl md:text-[110px] font-bold text-yellow-400">
+				   1.300+
+			   </h2>
+			   <h3 class="font-bold text-xl md:text-3xl text-white">
+				   Perguruan Tinggi telah berpartisipasi di berbagai program Kampus Merdeka
+			   </h3>
+		   </div>
+	   </div>
+   </section>
+   <!-- End of About Kampus Merdeka -->
+
+   <!-- syarat section -->
+   <section class="py-12 md:py-24 bg-gray-100 overflow-hidden relative">
+	   <div class="absolute z-0 -top-52 left-20">
+		   <svg viewBox="0 0 80 80" height="400" fill="#FDE1DC" stroke=""><path d="M40 0L45.0059 8.39397L52.3607 1.95774L54.5277 11.4878L63.5114 7.63932L62.6274 17.3726L72.3607 16.4886L68.5122 25.4723L78.0423 27.6393L71.606 34.9941L80 40L71.606 45.0059L78.0423 52.3607L68.5122 54.5277L72.3607 63.5114L62.6274 62.6274L63.5114 72.3607L54.5277 68.5122L52.3607 78.0423L45.0059 71.606L40 80L34.9941 71.606L27.6393 78.0423L25.4723 68.5122L16.4886 72.3607L17.3726 62.6274L7.63932 63.5114L11.4878 54.5277L1.95774 52.3607L8.39397 45.0059L0 40L8.39397 34.9941L1.95774 27.6393L11.4878 25.4723L7.63932 16.4886L17.3726 17.3726L16.4886 7.63932L25.4723 11.4878L27.6393 1.95774L34.9941 8.39397L40 0Z"></path></svg>
+	   </div>
+
+	   <div class="md:px-6 px-3 max-w-6xl relative mx-auto">
+		   <h2 class="text-2xl md:text-5xl font-bold max-w-6xl mx-auto mb-2">Apa saja syarat keikutsertaan mahasiswa?</h2>
+		   <p class="md:text-base text-sm">Berikut adalah <strong>persyaratan umum</strong> dari beberapa program Kampus Merdeka</p>
+
+		   <!-- tabel -->
+		   <div class="relative overflow-x-auto rounded-2xl border border-gray-300 mt-6">
+			   <table class="w-full text-base text-left rtl:text-right text-black">
+				   <thead class="text-base text-black bg-white">
+					   <tr>
+						   <th scope="col" class="px-4 py-3">
+						   </th>
+						   <th scope="col" class="px-4 py-3">
+							   Magang dan Studi Independen Bersertifikat (MSIB)
+						   </th>
+						   <th scope="col" class="px-4 py-3">
+							   Kampus Mengajar
+						   </th>
+						   <th scope="col" class="px-4 py-3">
+							   Pertukaran Mahasiswa Merdeka
+						   </th>
+						   <th scope="col" class="px-4 py-3">
+							   Wirausaha Merdeka
+						   </th>
+						   <th scope="col" class="px-4 py-3">
+							   Indonesian International Student Mobility Awards
+						   </th>
+					   </tr>
+				   </thead>
+				   <tbody>
+					   <tr class="odd:bg-gray-100 even:bg-white">
+						   <th scope="row" class="px-4 py-6 font-semibold text-gray-900 whitespace-nowrap">
+							   Jenjang <br> Pendidikan
+						   </th>
+						   <td class="px-4 py-6">
+							   S1 atau Vokasi
+						   </td>
+						   <td class="px-4 py-6">
+							   S1 atau Vokasi
+						   </td>
+						   <td class="px-4 py-6">
+							   S1
+						   </td>
+						   <td class="px-4 py-6">
+							   S1
+						   </td>
+						   <td class="px-4 py-6">
+							   S1
+						   </td>
+					   </tr>
+					   <tr class="odd:bg-gray-100 even:bg-white">
+						   <th scope="row" class="px-4 py-4 font-semibold text-gray-900 whitespace-nowrap">
+							   Semester
+						   </th>
+						   <td class="px-4 py-6">
+							   <ul>
+								   <li>. D2/D3/D4: Minimal semester 2</li>
+								   <li>. S1: Minimal semester 4</li>
+							   </ul>
+						   </td>
+						   <td class="px-4 py-6">
+							   Minimal semester 4
+						   </td>
+						   <td class="px-4 py-6">
+							   Semester 3,5 atau 7
+						   </td>
+						   <td class="px-4 py-6">
+							   <ul>
+								   <li>. S1/D3/D4: Minimal semester 5</li>
+								   <li>. D2: Minimal semester 3</li>
+								   <li>. S2/S3: Tanpa batasan</li>
+							   </ul>
+						   </td>
+						   <td class="px-4 py-6">
+							   Semester 4 atau 6 saat proses pendaftaran
+						   </td>
+					   </tr>
+					   <tr class="odd:bg-gray-100 even:bg-white">
+						   <th scope="row" class="px-4 py-4 font-semibold text-gray-900 whitespace-nowrap">
+							   Minimal IPK
+						   </th>
+						   <td class="px-4 py-6">
+							   -
+						   </td>
+						   <td class="px-4 py-6">
+							   3 dari skala 4
+						   </td>
+						   <td class="px-4 py-6">
+							   2.75 dari skala 4
+						   </td>
+						   <td class="px-4 py-6">
+							   -
+						   </td>
+						   <td class="px-4 py-6">
+							   3 dari skala 4
+						   </td>
+					   </tr>
+					   <tr class="odd:bg-gray-100 even:bg-white">
+						   <th scope="row" class="px-4 py-4 font-semibold text-gray-900 whitespace-nowrap">
+						   </th>
+						   <td class="px-4 py-6">
+							   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/magang/syarat-ketentuan'" class="text-black font-semibold border border-black text-center rounded-xl py-2 px-4">
+								   Selengkapnya
+							   </button>
+						   </td>
+						   <td class="px-4 py-6">
+							   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program/mengajar/syarat-ketentuan'" class="text-black font-semibold border border-black text-center rounded-xl py-2 px-4">
+								   Selengkapnya
+							   </button>
+						   </td>
+						   <td class="px-4 py-6">
+							   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/web/pertukaranMahasiswaMerdeka2021'" class="text-black font-semibold border border-black text-center rounded-xl py-2 px-4">
+								   Selengkapnya
+							   </button>
+						   </td>
+						   <td class="px-4 py-6">
+							   <button onclick="window.location.href='https://wirausahamerdeka.id/tentang-program'" class="text-black font-semibold border border-black text-center rounded-xl py-2 px-4">
+								   Selengkapnya
+							   </button>
+						   </td>
+						   <td class="px-4 py-6">
+							   <button onclick="window.location.href='https://iisma.kemdikbud.go.id/'" class="text-black font-semibold border border-black text-center rounded-xl py-2 px-4">
+								   Selengkapnya
+							   </button>
+						   </td>
+					   </tr>
+				   </tbody>
+			   </table>
+		   </div>
+
+
+		   <div class="mt-20">
+			   <h4 class="text-lg font-medium">Catatan Lain</h4>
+			   <ol type="1" class="list-decimal list-inside flex flex-col gap-1 mt-2 w-full md:w-3/4">
+				   <li>
+					   Perguruan Tinggi harus merupakan Perguruan Tinggi Negeri atau Swasta dan <strong>berada di bawah Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</strong>. Cek panduannya di <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417256876825-Ketentuan-Data-Mahasiswa-di-PD-Dikti" class="text-blue-700 underline font-medium">di sini</a>
+				   </li>
+				   <li>
+					   Mahasiswa hanya dapat mengikuti <strong>1 (satu) program per periode.</strong>
+				   </li>
+				   <li>
+					   Harus berstatus <strong>mahasiswa aktif.</strong> Jika mahasiswa lulus/mengikuti yudisium sebelum program berakhir maka dianggap mengundurkan diri dari program Kampus Merdeka.
+				   </li>
+			   </ol>
+		   </div>
+	   </div>
+
+	   <div class="max-w-6xl mt-16 flex justify-center mx-auto">
+		   <button onclick="window.location.href='https://kampusmerdeka.kemdikbud.go.id/program'" class="text-white text-center font-semibold bg-[#1a1a1a] rounded-xl py-2 px-8">
+			   Lihat program lainnya
+		   </button>
+	   </div>
+   </section>
+   <!-- end syarat section -->
+
+   <!-- faq -->
+   <section class="bg-white py-12 md:py-24">
+	   <div class="max-w-6xl md:px-6 px-3 mx-auto">
+		   <h2 class="text-2xl md:text-5xl font-bold max-w-6xl mx-auto text-center">Pertanyaan Umum</h2>
+
+		   <div class="flex mt-8 md:mt-20 gap-8 md:gap-20 md:flex-row flex-col items-start justify-between">
+			   <div class="flex flex-col gap-8">
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417199313561-Cara-Mahasiswa-Mendaftar-Akun-Kampus-Merdeka" class="text-sm md:text-lg text-gray-700">Bagaimana cara registrasi akun Merdeka Belajar Kampus Merdeka?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417256876825-Ketentuan-Data-Mahasiswa-di-PD-Dikti" class="text-sm md:text-lg text-gray-700">Apa yang harus saya lakukan apabila data saya berbeda atau tidak ada di PDDikti?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://wartekhelp.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fpusatinformasi.kampusmerdeka.kemdikbud.go.id%2Fhc%2Fen-us%2Farticles%2F8834574623769-Kendala-Umum-dan-Solusi-Saat-Verifikasi-NISN&theme=hc&locale=en-us&brand_id=4416820781337&auth_origin=4416820781337%2Ctrue%2Ctrue" class="text-sm md:text-lg text-gray-700">Bagaimana jika saya gagal verifikasi Nomor Induk Siswa Nasional (NISN)?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417257561497-Panduan-Verifikasi-Rekening-Bank-Mahasiswa-Kampus-Mengajar" class="text-sm md:text-lg text-gray-700">Apa saja syarat verifikasi rekening bank dan bagaimana caranya?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+			   </div>
+			   <div class="flex flex-col gap-8">
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417256876825-Ketentuan-Data-Mahasiswa-di-PD-Dikti" class="text-sm md:text-lg text-gray-700">Bagaimana cara cek data saya di PDDikti?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://wartekhelp.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fpusatinformasi.kampusmerdeka.kemdikbud.go.id%2Fhc%2Fen-us%2Farticles%2F4417544764825-Melengkapi-Verifikasi-Data-NISN&theme=hc&locale=en-us&brand_id=4416820781337&auth_origin=4416820781337%2Ctrue%2Ctrue" class="text-sm md:text-lg text-gray-700">Bagaimana cara verifikasi Nomor Induk Siswa Nasional (NISN)?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+				   <div class="border-b border-gray-300 pb-4 flex items-center gap-4">
+					   <a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us/articles/4417185050777-Apa-itu-Kampus-Merdeka" class="text-sm md:text-lg text-gray-700">Apakah saya boleh mendaftar lebih dari 1 program Kampus Merdeka dalam periode yang sama?</a>
+					   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+					   </svg>
+				   </div>
+			   </div>
+		   </div>
+	   </div>
+	   <div class="max-w-6xl mt-16 flex justify-center mx-auto">
+		   <button onclick="window.location.href='https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us'" class="text-black text-center font-semibold border-black border rounded-xl py-2 px-8">
+			   Lihat pertanyaan lainnya
+		   </button>
+	   </div>
+   </section>
+   <!-- end of faq -->
+
+   <!-- footer -->
+   <footer class="bg-black py-10">
+	   <div class="max-w-6xl px-3 md:px-6 md:flex-row flex-col mx-auto flex gap-20 justify-between">
+		   <div class="flex md:flex-row flex-col items-start gap-8 w-full md:w-[60%]">
+			   <img 
+				   src="../image/logokemdikbud.webp"
+				   alt="kemdikbud"
+				   class="w-20 md:w-40"
+			   />
+			   <div class="text-white">
+				   <h4 class="text-xl md:text-2xl font-semibold mb-12">
+					   Direktorat Jenderal Pendidikan Tinggi, Riset, dan Teknologi (Diktiristek)
+				   </h4>
+				   <p class="mb-4">marketing@kampusmerdeka.co</p>
+				   <p>Jl. Jenderal Sudirman, Senayan, Jakarta 10270</p>
+			   </div>
+		   </div>
+		   <div class="text-white w-full md:w-[20%]">
+			   <h4 class="text-2xl font-semibold mb-6">
+				   Navigasi
+			   </h4>
+			   <ul class="flex gap-4 flex-col">
+				   <li><a href="#">Beranda</a></li>
+				   <li><a href="https://kampusmerdeka.kemdikbud.go.id/web/about">Tentang Kami</a></li>
+				   <li><a href="https://kampusmerdeka.kemdikbud.go.id/news">Berita</a></li>
+				   <li><a href="https://kampusmerdeka.kemdikbud.go.id/announcement">Pengumuman</a></li>
+				   <li><a href="https://pusatinformasi.kampusmerdeka.kemdikbud.go.id/hc/en-us">FAQ</a></li>
+				   <li><a href="https://kampusmerdeka.kemdikbud.go.id/program">Program</a></li>
+				   <li><a href="https://kampusmerdeka.kemdikbud.go.id/register">Daftar</a></li>
+			   </ul>
+		   </div>
+		   <div class="text-white w-full md:w-[20%]">
+			   <h4 class="text-2xl font-semibold mb-6">
+				   Tautan Eksternal
+			   </h4>
+			   <p><a href="https://mitra.kampusmerdeka.kemdikbud.go.id/">Mitra Kampus Merdeka</a></p>
+		   </div>
+	   </div>
+	   <div class="mt-12 max-w-6xl mx-auto flex md:flex-row flex-col px-3 items-start gap-4 md:items-center justify-around">
+		   <!-- social media -->
+		   
+		   <div class="flex items-center gap-6">
+			<a href="https://twitter.com/ditjendikti">
+			   <img
+			       
+				   src="../image/icons/twitter.svg"
+				   alt="twitter"
+				   class="w-6"
+				
+			   />
+			</a>
+			<a href="https://www.instagram.com/kampusmerdeka.ri/">
+			   <img
+				   src="../image/icons/instagram.svg"
+				   alt="instagram"
+				   class="w-6"
+			   />
+			</a>
+			<a href="https://www.youtube.com/channel/UCYXoGiVYq7ExZV1_LZ_p4fA">
+			   <img
+				   src="../image/icons/youtube.svg"
+				   alt="youtube"
+				   class="w-6"
+			   />
+			</a>
+			<a href="https://www.facebook.com/mbkm.ri/">
+			   <img
+				   src="../image/icons/facebook.svg"
+				   alt="facebook"
+				   class="w-6"
+			   />
+			</a>
+			<a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFEU0mY46FCYwAAAY6OiPC4nD2bxleToNIHgN_NkpSR2EqhrvhRzxqSL46WQ-fXW34eDEyuNXV9RBeciKlmT1pkqN6UXmn4i7bcckwVO74oIFfnCB_tO6F9_fVSUgGgk-8eMm4=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fkampus-merdeka%2F">
+			   <img
+				   src="../image/icons/linkedin.svg"
+				   alt="linkedin"
+				   class="w-6"
+			   />
+			</a>
+			<a href="https://dikti.kemdikbud.go.id/">
+			   <img
+				   src="../image/icons/website.svg"
+				   alt="website"
+				   class="w-6"
+			   />
+			</a>
+		   </div>
+
+		   <p class="text-white">
+			   Hak Cipta 2022 Kementerian Pendidikan dan Kebudayaan RI <br> Foto oleh ITS, ITERA, and UI
+		   </p>
+	   </div>
+   </footer>
+
+   <script>
+	   document.addEventListener("DOMContentLoaded", function() {
+		   const buttons = document.querySelectorAll("[data-collapse-toggle]");
+
+		   buttons.forEach(button => {
+			   button.addEventListener("click", function() {
+				   const targetId = this.getAttribute("data-collapse-toggle");
+				   const target = document.getElementById(targetId);
+
+				   // Toggle the visibility of the target element
+				   target.classList.toggle("hidden");
+			   });
+		   });
+	   });
+
+	   document.getElementById('menuBtn').addEventListener('click', function() {
+		   document.getElementById('menu').classList.toggle('hidden');
+	   });
+
+	   document.getElementById('closeBtn').addEventListener('click', function() {
+		   document.getElementById('menu').classList.add('hidden');
+	   });
+
+	   let defaultTransform = 0;
+	   function goNext() {
+		   defaultTransform = defaultTransform - 398;
+		   var slider = document.getElementById("slider");
+		   if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+		   slider.style.transform = "translateX(" + defaultTransform + "px)";
+	   }
+	   next.addEventListener("click", goNext);
+	   function goPrev() {
+		   var slider = document.getElementById("slider");
+		   if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+		   else defaultTransform = defaultTransform + 398;
+		   slider.style.transform = "translateX(" + defaultTransform + "px)";
+	   }
+	   prev.addEventListener("click", goPrev);
+
+
+   </script>
+
 
 </body>
 
