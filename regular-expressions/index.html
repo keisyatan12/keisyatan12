@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-100 h-screen flex justify-center items-center">
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-4">Registration Form</h2>
+    <form id="registration-form" class="space-y-4">
+      <div>
+        <label for="full-name" class="block">Full Name</label>
+        <input type="text" id="full-name" name="full-name" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div>
+        <label for="nim" class="block">NIM</label>
+        <input type="text" id="nim" name="nim" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div>
+        <label for="email" class="block">Email Address</label>
+        <input type="email" id="email" name="email" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div>
+        <label for="phone" class="block">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div>
+        <label for="address" class="block">Address</label>
+        <textarea id="address" name="address" rows="3" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:border-blue-500" required></textarea>
+      </div>
+      
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
